@@ -35,4 +35,14 @@ $ i2cdetect  -y 1
 70: -- -- -- -- -- -- -- --                         
 ```
 
+ # Wiring
+  
+ | Raspberry Pi | TMP102 |
+ |--------------|--------|
+ | 3.3V         | VCC    |
+ | GND          | GND    |
+ | SDA          | SDA    |
+ | SCL          | SCL    |
+ | GND          | ADR0   |
  
+  
