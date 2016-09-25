@@ -35,7 +35,7 @@ $ i2cdetect  -y 1
 70: -- -- -- -- -- -- -- --                         
 ```
 
- # Wiring
+# Wiring
   
 | Raspberry Pi | TMP102 |
 | ------------ | ------ |
