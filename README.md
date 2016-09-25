@@ -1,5 +1,8 @@
 # tmp102-rs
 
+[![Version](https://img.shields.io/crates/v/tmp102.svg)](https://crates.io/crates/tmp102)
+[![Docs](https://docs.rs/tmp102/badge.svg)](https://docs.rs/tmp102)
+
 Rust library for the Texas Instruments TMP102 digital temperature sensor.
 
 This library will only compile on Linux and has only been tested on the Raspberry Pi and with this TMP102 breakout: https://www.sparkfun.com/products/11931
