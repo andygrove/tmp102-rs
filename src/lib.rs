@@ -3,7 +3,7 @@ extern crate i2cdev;
 use i2cdev::core::*;
 use i2cdev::linux::*;
 
-enum TempScale {
+pub enum TempScale {
     Fahrenheit,
     Celcius
 }
@@ -23,7 +23,6 @@ impl TMP102 {
     pub fn read(&mut self, scale: TempScale) -> Result<f32, Box<LinuxI2CError>> {
         try!(self.dev.smbus_write_byte(0x00));
         try!(self.dev.read(&mut self.buf));
-        println!("Temperature: {:?}", &self.buf);
         let temp: u16 = ((self.buf[0] as u16) << 8_u16 | (self.buf[1] as u16)) >> 4_u16;
         //if temp & (1_u16<11_u16) == 1 {
         //  temp |= 0xF800;
@@ -40,6 +39,7 @@ impl TMP102 {
 #[cfg(test)]
 mod tests {
     use super::TMP102;
+    use super::TempScale;
 
     #[test]
     fn it_works() {
