@@ -1,5 +1,6 @@
 [package]
 name = "tmp102"
+description = "Driver for the Texas Instruments TMP102 digital temperature senor (for Linux)"
 version = "1.0.0"
 authors = ["Andy Grove <andygrove73@gmail.com>"]
 homepage = "https://github.com/andygrove/tmp102-rs"
