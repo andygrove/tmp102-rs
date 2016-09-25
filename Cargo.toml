@@ -2,6 +2,10 @@
 name = "tmp102"
 version = "1.0.0"
 authors = ["Andy Grove <andygrove73@gmail.com>"]
+homepage = "https://github.com/andygrove/tmp102-rs"
+documentation = "https://github.com/andygrove/tmp102-rs"
+repository = "https://github.com/andygrove/tmp102-rs"
+license = "Apache-2.0"
 
 [dependencies]
 i2cdev = "0.3.1"
