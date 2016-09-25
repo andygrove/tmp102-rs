@@ -23,10 +23,11 @@ impl TMP102 {
     pub fn read(&mut self, scale: TempScale) -> Result<f32, Box<LinuxI2CError>> {
         try!(self.dev.smbus_write_byte(0x00));
         try!(self.dev.read(&mut self.buf));
-        let temp: u16 = ((self.buf[0] as u16) << 8_u16 | (self.buf[1] as u16)) >> 4_u16;
-        //if temp & (1_u16<11_u16) == 1 {
-        //  temp |= 0xF800;
-        // }
+        let mut temp: u16 = ((self.buf[0] as u16) << 8_u16 | (self.buf[1] as u16)) >> 4_u16;
+        // move the negative bit
+        if temp & 0x0800 > 0 {
+            temp |= 0xF800;
+        }
         let celcius = temp as f32 / 16_f32;
         match scale {
             TempScale::Celcius => Ok(celcius),
